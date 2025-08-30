@@ -10,7 +10,7 @@ public class ModoAvion extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        boolean avionState = intent.getBooleanExtra("state", false);
+        boolean avionState = intent.getBooleanExtra("state", true);
 
         if(avionState){
             Toast.makeText(context, "Modo avion habilitado", Toast.LENGTH_SHORT).show();
