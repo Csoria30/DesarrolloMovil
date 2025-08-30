@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvAutorLibro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.DetallesActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="52dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titulo: "
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/tvAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autor: "
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <TextView
+        android:id="@+id/tvGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genero: "
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <TextView
+        android:id="@+id/tvAnio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Año: "
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

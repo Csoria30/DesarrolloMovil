@@ -10,13 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.ulp.trabajopractico2.R;
 
-public class MainActivity extends AppCompatActivity {
+public class DetallesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detalles);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tvAutorLibro), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
