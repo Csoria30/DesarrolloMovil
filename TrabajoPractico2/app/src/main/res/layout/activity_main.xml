@@ -18,11 +18,17 @@
         android:letterSpacing="0.05"
         android:text="Biblioteca Virtual"
         android:textColor="@android:color/black"
-        android:textSize="28sp"
+        android:textSize="26sp"
         android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:drawableStart="@drawable/libros_icon"
+        android:drawablePadding="8dp"
+
+        />
 
     <EditText
         android:id="@+id/etLibroBuscado"
@@ -38,7 +44,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+
+        android:drawableStart="@drawable/lupa"
+        android:drawablePadding="4dp"
+        />
 
     <Button
         android:id="@+id/btnBuscar"
