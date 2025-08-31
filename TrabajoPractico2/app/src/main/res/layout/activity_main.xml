@@ -5,6 +5,7 @@
     android:id="@+id/tvAutorLibro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7F4EA"
     tools:context=".View.MainActivity">
 
 
@@ -24,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etLibroBuscado"
         android:layout_width="318dp"
         android:layout_height="49dp"
         android:layout_marginTop="40dp"
@@ -43,7 +44,7 @@
         android:id="@+id/btnBuscar"
         android:layout_width="186dp"
         android:layout_height="39dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/btn_background"
         android:fontFamily="sans-serif"
         android:text="Buscar"
@@ -52,20 +53,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/etLibroBuscado" />
 
     <TextView
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="No se encontraron resultados"
-        android:textColor="#B00020"
+        android:text=""
+        android:padding="8dp"
+        android:textColor="#9112BC"
         android:textSize="14sp"
-        android:fontFamily="sans-serif"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@+id/btnBuscar"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.02"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar"
+        app:layout_constraintVertical_bias="0.168" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
