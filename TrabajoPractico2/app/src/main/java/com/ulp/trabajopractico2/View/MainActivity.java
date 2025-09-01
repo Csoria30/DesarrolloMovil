@@ -46,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
         // Asignamos el drawable al inicio del EditText
         binding.etLibroBuscado.setCompoundDrawables(lupa, null, null, null);
 
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tvAutorLibro), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
 
         //Observadores
         viewModel.getmLibro().observe(this, libro ->{

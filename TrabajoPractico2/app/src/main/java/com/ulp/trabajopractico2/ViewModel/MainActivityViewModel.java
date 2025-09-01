@@ -19,12 +19,13 @@ public class MainActivityViewModel extends AndroidViewModel {
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
+        cargarLibros();
     }
 
     //Carga los libros
     private void cargarLibros() {
         biblioteca.add(new LibroModel(1, "Cien Años de Soledad", "Gabriel García Márquez", "Realismo mágico", 1967, 417,
-                "Novela que narra la historia de la familia Buendía a lo largo de varias generaciones.", "url_portada1"));
+                "Novela que narra la historia de la familia Buendía a lo largo de varias generaciones.", "cover_elprincipito"));
         biblioteca.add(new LibroModel(2, "1984", "George Orwell", "Distopía", 1949, 328,
                 "Una novela sobre un futuro totalitario controlado por el Gran Hermano.", "url_portada2"));
         biblioteca.add(new LibroModel(3, "El Principito", "Antoine de Saint-Exupéry", "Fantasía", 1943, 96,

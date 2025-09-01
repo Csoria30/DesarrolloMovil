@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TrabajoPractico2</string>
+    <string name="titulo_label">Título: %1$s</string>
+    <string name="autor_label">Autor: %1$s</string>
+    <string name="genero_label">Género: %1$s</string>
+    <string name="anio_label">Año: %1$d</string>
 </resources>
