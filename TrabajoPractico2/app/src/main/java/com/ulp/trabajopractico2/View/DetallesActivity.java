@@ -34,14 +34,12 @@ public class DetallesActivity extends AppCompatActivity {
 
         //Observadores
         viewModel.getMuLibro().observe(this, libro ->{
-            int imagenId = getResources().getIdentifier(libro.getPortadaUrl(), "drawable", getPackageName());
-
             binding.tvTitulo.setText(getString(R.string.titulo_label, libro.getTitulo()));
             binding.tvAutor.setText(getString(R.string.autor_label, libro.getAutor()));
             binding.tvGenero.setText(getString(R.string.genero_label, libro.getGenero()));
             binding.tvAnio.setText(getString(R.string.anio_label, libro.getAnio()));
             binding.tvDescripcion.setText(libro.getDescripcion());
-            binding.imgPortada.setImageResource(imagenId);
+            binding.imgPortada.setImageResource(libro.getImagen());
         });
 
         viewModel.cargarDatos(getIntent());

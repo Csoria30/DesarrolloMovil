@@ -10,9 +10,9 @@ public class LibroModel implements Serializable {
     private int anio;
     private int paginas;
     private String descripcion;
-    private String portadaUrl;
+    private int imagen;
 
-    public LibroModel(int id, String titulo, String autor, String genero, int anio, int paginas, String descripcion, String portadaUrl) {
+    public LibroModel(int id, String titulo, String autor, String genero, int anio, int paginas, String descripcion, int imagen) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -20,25 +20,27 @@ public class LibroModel implements Serializable {
         this.anio = anio;
         this.paginas = paginas;
         this.descripcion = descripcion;
-        this.portadaUrl = portadaUrl;
+        this.imagen = imagen;
     }
 
-    //GETTERS
+    // Getters
     public int getId() { return id; }
     public String getTitulo() { return titulo; }
     public String getAutor() { return autor; }
     public String getGenero() { return genero; }
     public int getAnio() { return anio; }
-    public int getPaginas() { return paginas; }
+    public int getPaginas() {  return paginas; }
     public String getDescripcion() { return descripcion; }
-    public String getPortadaUrl() { return portadaUrl; }
+    public int getImagen() { return imagen; }
 
-    //SETTERS
+    //Setters
+
+    public void setId(int id) { this.id = id; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public void setAutor(String autor) { this.autor = autor; }
     public void setGenero(String genero) { this.genero = genero; }
     public void setAnio(int anio) { this.anio = anio; }
     public void setPaginas(int paginas) { this.paginas = paginas; }
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public void setPortadaUrl(String portadaUrl) { this.portadaUrl = portadaUrl; }
+    public void setImagen(int imagen) { this.imagen = imagen; }
 }
