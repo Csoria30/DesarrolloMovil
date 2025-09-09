@@ -1,5 +1,6 @@
 package com.ulp.ejemplomenu2.ui.home;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -13,26 +14,41 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ulp.ejemplomenu2.R;
+import com.ulp.ejemplomenu2.databinding.FragmentResultadoBinding;
+import com.ulp.ejemplomenu2.modelo.PalabraModel;
 
 public class ResultadoFragment extends Fragment {
 
-    private ResultadoViewModel mViewModel;
+    private ResultadoViewModel mv;
+    private FragmentResultadoBinding binding;
 
-    public static ResultadoFragment newInstance() {
-        return new ResultadoFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_resultado, container, false);
+
+        mv = new ViewModelProvider(this).get(ResultadoViewModel.class);
+        binding = FragmentResultadoBinding.inflate(inflater, container,false);
+        View root = binding.getRoot();
+
+        mv.getMutablePalabra().observe(getViewLifecycleOwner(), new Observer<PalabraModel>() {
+            @Override
+            public void onChanged(PalabraModel palabra) {
+                binding.tvPalabraIngles.setText(palabra.getPalabraIngles());
+                binding.imgFoto.setImageResource(palabra.getFoto());
+            }
+        });
+
+        // return bundle
+
+        mv.buscarTraccion(getArguments());
+
+        return root;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ResultadoViewModel.class);
-        // TODO: Use the ViewModel
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
-
 }

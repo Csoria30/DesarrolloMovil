@@ -30,10 +30,13 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 String palabraBuscada = binding.etPalabraBuscada.getText().toString();
 
+                // Coleccion de elementos - Envio de datos entre Fragments
+                Bundle bundle = new Bundle();
+                bundle.putString("palabra", palabraBuscada);
+
                 int fragmentAInflar = R.id.nav_host_fragment_content_main;
                 int frangmentDestino = R.id.resultadoFragment;
-
-                Navigation.findNavController(getActivity(), fragmentAInflar).navigate(frangmentDestino);
+                Navigation.findNavController(getActivity(), fragmentAInflar).navigate(frangmentDestino, bundle);
             }
         });
 
