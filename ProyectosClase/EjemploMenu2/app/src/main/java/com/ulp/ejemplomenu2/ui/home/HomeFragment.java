@@ -9,23 +9,34 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.ulp.ejemplomenu2.R;
 import com.ulp.ejemplomenu2.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private HomeViewModel mv;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-
+        mv = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        binding.btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String palabraBuscada = binding.etPalabraBuscada.getText().toString();
+
+                int fragmentAInflar = R.id.nav_host_fragment_content_main;
+                int frangmentDestino = R.id.resultadoFragment;
+
+                Navigation.findNavController(getActivity(), fragmentAInflar).navigate(frangmentDestino);
+            }
+        });
+
         return root;
     }
 

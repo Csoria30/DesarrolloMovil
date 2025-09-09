@@ -10,4 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_traductor">Traductor</string>
+    <string name="menu_biblioteca">Biblioteca</string>
+    <string name="menu_salir">Salir</string>
 </resources>

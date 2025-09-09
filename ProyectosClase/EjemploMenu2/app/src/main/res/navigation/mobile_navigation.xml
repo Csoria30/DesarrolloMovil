@@ -8,18 +8,31 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.ulp.ejemplomenu2.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/menu_traductor"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.ulp.ejemplomenu2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_biblioteca"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.ulp.ejemplomenu2.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_salir"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.ulp.ejemplomenu2.ui.home.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" >
+        <action
+            android:id="@+id/action_resultadoFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
