@@ -17,23 +17,30 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.ulp.ejemplolocalizacion.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
     private MainActivityViewModel viewModel;
+    private ActivityMainBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         solicitarPermisos();
         viewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 
         viewModel.getMLocation().observe(this, new Observer<Location>() {
             @Override
             public void onChanged(Location location) {
-
-
                 if (location != null) {
+                    double latitud = location.getLatitude();
+                    double longitud = location.getLongitude();
+
+                    binding.tvCoordenadas.setText("Latitud: " + latitud + "Longitud: " + longitud);
+
                     Toast.makeText(MainActivity.this, "Lat: " + location.getLatitude() + " Long: " + location.getLongitude(), Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Ubicación no disponible", Toast.LENGTH_SHORT).show();
@@ -41,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        viewModel.obtenerUbicacion();
+        //viewModel.obtenerUbicacion();
+        //viewModel.actualizarPosiciones();
+        viewModel.leerPosicion();
 
     }
 
