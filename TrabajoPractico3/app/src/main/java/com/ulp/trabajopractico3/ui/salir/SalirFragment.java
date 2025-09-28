@@ -1,4 +1,4 @@
-package com.ulp.trabajopractico3.ui.slideshow;
+package com.ulp.trabajopractico3.ui.salir;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.ulp.trabajopractico3.databinding.FragmentSlideshowBinding;
 
-public class SlideshowFragment extends Fragment {
+public class SalirFragment extends Fragment {
 
     private FragmentSlideshowBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        SalirViewModel salirViewModel =
+                new ViewModelProvider(this).get(SalirViewModel.class);
 
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        salirViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
