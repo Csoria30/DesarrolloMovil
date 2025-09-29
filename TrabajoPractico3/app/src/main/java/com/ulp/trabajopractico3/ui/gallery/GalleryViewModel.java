@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModel;
 
 import com.ulp.trabajopractico3.model.ProductoModel;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class GalleryViewModel extends ViewModel {
@@ -29,6 +32,13 @@ public class GalleryViewModel extends ViewModel {
 
 
     public void cargarProductos (){
-        listaProductosMutable.setValue(stock);
+        //Creamos una copia para ordenarlos
+        ArrayList<ProductoModel> productosOrdenados = new ArrayList<>(stock);
+
+        productosOrdenados.sort((p1, p2) ->
+                p1.getDescripcion().compareToIgnoreCase(p2.getDescripcion())
+        );
+
+        listaProductosMutable.setValue(productosOrdenados);
     }
 }
