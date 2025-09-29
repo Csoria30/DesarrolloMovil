@@ -39,7 +39,25 @@ public class HomeViewModel extends ViewModel {
             return;
         }
 
+        //Valida que codigo solo tenga numeros
+        if(!codigo.matches("\\d+")){
+            msgeError.setValue("El código debe contener solo números");
+            return;
+        }
 
+        // Valida numero valido, acepta solo decimales positivos
+        if(!precio.matches("\\d+(\\.\\d+)?")){
+            msgeError.setValue("El precio debe ser un número válido");
+            return;
+        }
+
+        // Valida precio mayor a cero
+        double precioValido = Double.parseDouble(precio);
+        if(precioValido <= 0){
+            msgeError.setValue("El precio debe ser mayor a 0");
+            return;
+        }
+        
         //Cargando productos
         for(ProductoModel producto:stock){
             if(producto.getCodigo().equalsIgnoreCase(codigo)){
