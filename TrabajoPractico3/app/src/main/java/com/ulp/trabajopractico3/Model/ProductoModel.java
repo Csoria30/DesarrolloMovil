@@ -1,22 +1,13 @@
-package com.ulp.trabajopractico3.Model;
+package com.ulp.trabajopractico3.model;
 
-public class ProductoModelo {
-    private String codigo;
-    private String descripcion;
+public class ProductoModel {
+    private String descripcion, codigo;
     private double precio;
 
-    public ProductoModelo(String codigo, String descripcion, double precio) {
-        this.codigo = codigo;
+    public ProductoModel( String codigo, String descripcion, double precio) {
         this.descripcion = descripcion;
-        this.precio = precio;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
         this.codigo = codigo;
+        this.precio = precio;
     }
 
     public String getDescripcion() {
@@ -25,6 +16,14 @@ public class ProductoModelo {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public double getPrecio() {

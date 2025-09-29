@@ -1,19 +1,22 @@
-package com.ulp.trabajopractico3.ui.listar;
+package com.ulp.trabajopractico3.ui.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ListarViewModel extends ViewModel {
+public class SlideshowViewModel extends ViewModel {
+
 
     private final MutableLiveData<String> mText;
 
-    public ListarViewModel() {
+    public SlideshowViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is slideshow fragment");
     }
 
     public LiveData<String> getText() {
         return mText;
     }
+
+
 }

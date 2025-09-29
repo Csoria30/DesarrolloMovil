@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.ulp.trabajopractico3.ui.cargar.CargarFragment"
+        android:name="com.ulp.trabajopractico3.ui.home.HomeFragment"
         android:label="@string/menu_cargar"
-        tools:layout="@layout/cargar_home" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.ulp.trabajopractico3.ui.listar.ListarFragment"
+        android:name="com.ulp.trabajopractico3.ui.gallery.GalleryFragment"
         android:label="@string/menu_listar"
-        tools:layout="@layout/listar_gallery" />
+        tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.ulp.trabajopractico3.ui.salir.SalirFragment"
+        android:name="com.ulp.trabajopractico3.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_salir"
-        tools:layout="@layout/salir_slideshow" />
+        tools:layout="@layout/fragment_slideshow" />
 </navigation>
