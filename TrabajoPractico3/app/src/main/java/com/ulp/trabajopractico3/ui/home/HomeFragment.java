@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Observer: Campos de error
         viewModel.getmError().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -44,6 +45,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Observer: Campos Ok
         viewModel.getmCorrecto().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -51,14 +53,26 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        viewModel.getLimpiarCampos().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+
+        //Observer: Formulario
+        viewModel.getCampoCodigo().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
-            public void onChanged(Boolean limpiar) {
-                if (limpiar != null && limpiar) {
-                    binding.etCodigo.setText("");
-                    binding.etDescripcion.setText("");
-                    binding.etPrecio.setText("");
-                }
+            public void onChanged(String codigo) {
+                binding.etCodigo.setText(codigo);
+            }
+        });
+
+        viewModel.getCampoDescripcion().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String descripcion) {
+                binding.etDescripcion.setText(descripcion);
+            }
+        });
+
+        viewModel.getCampoPrecio().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String precio) {
+                binding.etPrecio.setText(precio);
             }
         });
 

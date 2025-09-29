@@ -11,7 +11,7 @@ import com.ulp.trabajopractico3.model.ProductoModel;
 
 public class HomeViewModel extends ViewModel {
     private MutableLiveData<String> msgeError, msgeCorrecto;
-    private MutableLiveData<Boolean> limpiarCampos;
+    private MutableLiveData<String> campoCodigo, campoDescripcion, campoPrecio;
 
     public LiveData<String> getmError() {
         if( msgeError == null )
@@ -26,11 +26,32 @@ public class HomeViewModel extends ViewModel {
 
         return msgeCorrecto;
     }
-    public LiveData<Boolean> getLimpiarCampos(){
-        if(limpiarCampos == null)
-            limpiarCampos = new MutableLiveData<>();
+    //Campos del formulario
+    public LiveData<String> getCampoCodigo(){
+        if(campoCodigo == null)
+            campoCodigo = new MutableLiveData<>();
 
-        return limpiarCampos;
+        return campoCodigo;
+    }
+
+    public LiveData<String> getCampoDescripcion(){
+        if(campoDescripcion == null)
+            campoDescripcion = new MutableLiveData<>();
+
+        return campoDescripcion;
+    }
+
+    public LiveData<String> getCampoPrecio(){
+        if(campoPrecio == null)
+            campoPrecio = new MutableLiveData<>();
+
+        return campoPrecio;
+    }
+
+    private void limpiarCampos(){
+        campoCodigo.setValue("");
+        campoDescripcion.setValue("");
+        campoPrecio.setValue("");
     }
 
     public void cargarProducto(String codigo, String descripcion, String precio){
@@ -57,7 +78,7 @@ public class HomeViewModel extends ViewModel {
             msgeError.setValue("El precio debe ser mayor a 0");
             return;
         }
-        
+
         //Cargando productos
         for(ProductoModel producto:stock){
             if(producto.getCodigo().equalsIgnoreCase(codigo)){
@@ -70,6 +91,6 @@ public class HomeViewModel extends ViewModel {
         ProductoModel productoNuevo = new ProductoModel(codigo, descripcion, Double.parseDouble(precio));
         stock.add(productoNuevo);
         msgeCorrecto.setValue("Se agregó correctamente");
-        limpiarCampos.setValue(true);
+        limpiarCampos();
     }
 }
