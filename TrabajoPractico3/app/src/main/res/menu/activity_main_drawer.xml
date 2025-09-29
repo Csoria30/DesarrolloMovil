@@ -13,6 +13,10 @@
             android:icon="@drawable/lista"
             android:title="@string/menu_listar" />
         <item
+            android:id="@+id/nav_eliminar"
+            android:icon="@drawable/salir"
+            android:title="@string/menu_eliminar" />
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/salir"
             android:title="@string/menu_salir" />
