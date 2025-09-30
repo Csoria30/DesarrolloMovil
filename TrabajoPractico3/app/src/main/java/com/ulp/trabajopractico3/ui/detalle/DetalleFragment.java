@@ -33,18 +33,6 @@ public class DetalleFragment extends Fragment {
         binding = FragmentDetalleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
-        Bundle data = getArguments();
-        if(data != null) {
-            String codigo = data.getString("codigo");
-            String descripcion = data.getString("descripcion");
-            double precio = data.getDouble("precio");
-            String precioString = String.valueOf(precio);
-
-            codigoParaEliminar = codigo;
-            viewModel.cargarDatosProducto(codigo, descripcion, precioString);
-        }
-
         //Click Botons list
         binding.btnConfirmarEliminar.setOnClickListener(v -> {
             viewModel.eliminarProducto(codigoParaEliminar);
@@ -93,6 +81,17 @@ public class DetalleFragment extends Fragment {
                 }
             }
         });
+
+        Bundle data = getArguments();
+        if(data != null) {
+            String codigo = data.getString("codigo");
+            String descripcion = data.getString("descripcion");
+            double precio = data.getDouble("precio");
+            String precioString = String.valueOf(precio);
+
+            codigoParaEliminar = codigo;
+            viewModel.cargarDatosProducto(codigo, descripcion, precioString);
+        }
 
 
         return root;

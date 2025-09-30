@@ -52,13 +52,6 @@ public class DetalleViewModel extends ViewModel {
     //Funciones
     public void cargarDatosProducto(String codigo, String descripcion, String precioString) {
 
-        if(msgeError == null) msgeError = new MutableLiveData<>();
-        if(navegarAtras == null) navegarAtras = new MutableLiveData<>();
-        if(codigoProducto == null) codigoProducto = new MutableLiveData<>();
-        if(descripcionProducto == null) descripcionProducto = new MutableLiveData<>();
-        if(precioProducto == null) precioProducto = new MutableLiveData<>();
-
-
         if(codigo == null || descripcion == null || precioString == null) {
             msgeError.setValue("Error: Datos del producto incompletos");
             navegarAtras.setValue(true);
