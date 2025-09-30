@@ -14,6 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.lifecycle.Observer;
+import androidx.navigation.NavAction;
+import androidx.navigation.Navigation;
+
 import com.ulp.trabajopractico3.R;
 import com.ulp.trabajopractico3.databinding.FragmentEliminarBinding;
 import com.ulp.trabajopractico3.model.ProductoModel;
@@ -59,6 +62,8 @@ public class EliminarFragment extends Fragment {
                 bundle.putString("descripcion", producto.getDescripcion());
                 bundle.putDouble("precio", producto.getPrecio());
 
+                //Viusta detalle
+                Navigation.findNavController(getView()).navigate(R.id.accion_eliminar_detalle, bundle);
             }
         });
 

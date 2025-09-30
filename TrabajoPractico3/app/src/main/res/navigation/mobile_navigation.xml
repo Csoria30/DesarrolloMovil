@@ -21,11 +21,22 @@
         android:id="@+id/nav_eliminar"
         android:name="com.ulp.trabajopractico3.ui.eliminar.EliminarFragment"
         android:label="@string/menu_eliminar"
-        tools:layout="@layout/fragment_eliminar" />
+        tools:layout="@layout/fragment_eliminar">
+
+        <action
+            android:id="@+id/accion_eliminar_detalle"
+            app:destination="@+id/detalleFragment"
+        />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.ulp.trabajopractico3.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_salir"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.ulp.trabajopractico3.ui.detalle.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" />
 </navigation>
